@@ -1,82 +1,49 @@
 /**
  * Created by stbormir on 09.01.2017.
+ * KLasse der Server, erzeugt Threads um mehrere Clients gleichzeitig zu bedienen
  */
-import java.io.*;
 
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 public class Server {
 
+    ServerSocket serverSocket;
+    Socket connection = null;
+
+        public void start() {
+
+            while (true) {
+                try {
+                    ServerSocket listener = new ServerSocket(4242);
+                    ExecutorService executor = Executors.newCachedThreadPool();             //Executor verwaltet Threads
+
+                    boolean p = true;
 
 
-        public static void main(String[] args) throws IOException {
-            ServerSocket listener = new ServerSocket(4242);
-
-            boolean p = true;
-
-
-
-            try {
+                    System.out.println("Server gestartet");
+                    while (p) {
+                        Socket socket = listener.accept();                                                  //Auf Verbindungen wird gewartet
+                        System.out.println("verbunden mit:" + socket.getLocalSocketAddress());
+                        executor.execute(new ServerThread(socket, this));
 
 
-                System.out.println("Server gestartet");
-                while (p) {
-                    Socket socket = listener.accept();                                                  //Auf Verbindungen wird gewartet
-                    System.out.println("verbunden mit:" + socket.getLocalSocketAddress());
-
-                    try {
-
-
-                        ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
-                        try {
-
-
-                            Url a = (Url) in.readObject();
-                            Path Link = (Paths.get(a.getMessage()));
-                            System.out.println(Link+" Wird heruntergeladen");
-
-
-
-                    OutputStream out = socket.getOutputStream();
-                            InputStream fileIn = new FileInputStream(Link.toFile());
-
-                            byte[] buffer = new byte[1024];
-                            while (fileIn.available() > 0) {
-                                out.write(buffer, 0, fileIn.read(buffer));
-                            }
-
-                            fileIn.close();
-                            out.flush();
-
-
-
-                        } catch (Exception e) {
-
-                            System.out.println("Fehler bei der Übertragung");
-                            e.printStackTrace();
-
-                        }
-
-
-                    } finally {
-                        socket.close();
-                        System.out.println("gedownloadet, gesendet und getrennt");                      //Download fertig, ferbindung getrennt
                     }
+                } catch (Exception e) {
+
+                    System.out.println("Fehler Server");
+                    e.printStackTrace();
+                    break;
+
                 }
             }
-            finally {
-                listener.close();
                 System.out.println("Server beendet");
-            }
+
+
         }
-
-
 
 
 

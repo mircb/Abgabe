@@ -4,7 +4,6 @@
 
 import java.io.*;
 import java.net.Socket;
-import java.nio.file.Files;
 
 import java.nio.file.Paths;
 
@@ -12,7 +11,8 @@ public class Client {
 
 
         public static void main(String[] args) throws IOException {
-            Url M = new Url(); //Objekt wird erzeugt, das gesendet wird
+            Url M = new Url();                                      //Objekt wird erzeugt, das gesendet wird indem der Pfad zum File gespeichert ist
+
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -33,42 +33,41 @@ public class Client {
             while(!exit) {
 
 
-                System.out.println("File mit Pfad eingeben (oder exit)");                    //Benutzernamen eingeben, um sich zu Authetifizieren.
+                System.out.println("File mit Pfad eingeben (oder exit)");                    //Pfad eingeben oder exit
                 enter = reader.readLine();
                 if (enter.equals("exit")) {
                     exit = true;
                 } else if (enter != null) {
 
                     M.setMessage(enter);
-                    Socket s = new Socket(serverAddress, 4242);                                         //Verbindung wird aufgebaut
+                    Socket s = new Socket(serverAddress, 4242);                                         //Verbindung wird aufgebaut und Pfad gesendet
 
                     ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
                     out.writeObject(M);
                     out.flush();
 
+                    String file = Paths.get(M.getMessage()).toString();
 
+                    String extension = "";
 
+                    int i = file.lastIndexOf('.');
+                    if (i > 0) {
+                        extension = file.substring(i+1);
+                    }
 
                     InputStream in = s.getInputStream();
-                    FileOutputStream fileOut = new FileOutputStream("Client-downloadet");
+                    FileOutputStream fileOut = new FileOutputStream("Client-downloadet."+extension);
 
-                    byte[] buffer = new byte[1024];
+                    byte[] buffer = new byte[1024];                                 //File wird gespeichert
                     while (s.isConnected()) {
                         int bytesRead = in.read(buffer);
                         if (bytesRead == -1) break;
                         fileOut.write(buffer, 0, bytesRead);
                     }
 
-
-
                     fileOut.close();
                     exit=true;
 
-
-                    File oldFile = new File("Client-downloadet");
-                    File newFile = new File(oldFile.getParent(), "Client-downloadet"+ Files.probeContentType(oldFile.toPath()));
-
-                    System.out.println("Client-downloadet."+ Files.probeContentType(oldFile.toPath()));
 
                 }
             }
