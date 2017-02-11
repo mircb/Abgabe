@@ -18,7 +18,7 @@ public class Client {
         Message M = new Message();
 
 
-        System.out.println("IP des Servers eingeben, auf dem der File-Download Port 4242 laüft\n" +                  //IP des Servers wird eingelesen(Default127.0.0.1) oder exit befehl wird ausgeführt
+        System.out.println("IP des Servers eingeben, auf dem die lange Wertberechnug auf Port 4242 laüft\n" +                  //IP des Servers wird eingelesen(Default127.0.0.1) oder exit befehl wird ausgeführt
                 "(Default 127.0.0.1)Tippe 'exit' to exit");
 
         String serverAddress = "127.0.0.1";

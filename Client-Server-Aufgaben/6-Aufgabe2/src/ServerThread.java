@@ -28,6 +28,7 @@ public class ServerThread extends Thread {
             if (M.getMessage().equals("0")) {
 
                 double Ant = Math.random()*99*(Math.random())*100;
+                Thread.sleep(1000);
                 System.out.println("Wert:" + Ant);
                 M.setInt1(0);
 
@@ -35,6 +36,7 @@ public class ServerThread extends Thread {
             } else {
 
                 long Ant2 = System.currentTimeMillis();
+                Thread.sleep(1000);
                 System.out.println("Wert:" + Ant2);
                 M.setMessage(String.valueOf(Ant2));
                 M.setInt1(1);
