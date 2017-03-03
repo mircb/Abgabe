@@ -8,13 +8,13 @@ import java.net.Socket;
 public class ServerThread extends Thread {
     private Socket connection;
     private Server server;
-    ObjectInputStream in;
+    ObjectInputStream inp;
 
     public ServerThread(Socket con, Server s) throws IOException {          //Thread zum Kommunizieren mit dem Client
 
         this.connection = con;
         this.server = s;
-        ObjectInputStream in = new ObjectInputStream(con.getInputStream());
+
 
     }
 
@@ -23,6 +23,7 @@ public class ServerThread extends Thread {
         try {
             System.out.println("mit server verbunden");
             Nachricht msg;
+            ObjectInputStream in = new ObjectInputStream(connection.getInputStream());
 
             while (true) {
 

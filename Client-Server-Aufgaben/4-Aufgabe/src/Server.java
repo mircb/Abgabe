@@ -9,7 +9,17 @@ import java.util.concurrent.Executors;
  */
 public class Server {                                   //Server Hauptthread
 
-    public String getButtons() {
+    public static void main(String[] args) {
+
+
+    Server s = new Server();
+        s.start();
+
+    }
+
+
+
+        public String getButtons() {
 
         return buttons;
     }
@@ -35,7 +45,7 @@ public class Server {                                   //Server Hauptthread
         executor = Executors.newCachedThreadPool();
 
         try {
-            serverSocket = new ServerSocket(4343);
+            serverSocket = new ServerSocket(4242);
 
             for (int i = 0; i < 2; i++) {                 //Wartet auf 2 verbindungen
 

@@ -67,11 +67,11 @@
          <font>
             <Font size="13.0" />
          </font></Button>
-      <Label fx:id="label" layoutX="316.0" layoutY="21.0" text="Du bist X, der Gegner ist 0 " textOverrun="CLIP">
+      <Label fx:id="label" layoutX="316.0" layoutY="21.0" text="Du bist BLAU, der Gegner ist ROT" textOverrun="CLIP">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Label>
-      <Label ellipsisString="" layoutX="29.0" layoutY="19.0" prefHeight="84.0" prefWidth="193.0" text="Das ist ein Einfaches Tic-Tac-Toe Spiel. Einer der Spieler mus einen Server starten und der andere sich mit diesen verbinden. Viel Spaß!" wrapText="true">
+      <Label ellipsisString="" layoutX="29.0" layoutY="19.0" prefHeight="84.0" prefWidth="193.0" text="Das ist ein Einfaches 4-Gewinnt Spiel. Einer der Spieler mus einen Server starten und der andere sich mit diesen verbinden. Viel Spaß!" wrapText="true">
          <font>
             <Font name="System Italic" size="12.0" />
          </font>

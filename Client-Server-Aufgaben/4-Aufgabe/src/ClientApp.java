@@ -24,7 +24,7 @@ public class ClientApp extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("rootLayout.fxml"));               //GUI erstellen
             primaryStage.setTitle("4-Gewinnt-IP-Spiel");
-            primaryStage.setScene(new Scene(root, 800, 450));
+            primaryStage.setScene(new Scene(root, 800, 460));
             primaryStage.setResizable(false);
             primaryStage.getIcons().add(new Image("icon.png"));
             primaryStage.show();

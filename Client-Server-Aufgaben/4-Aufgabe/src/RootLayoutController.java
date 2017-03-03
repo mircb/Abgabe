@@ -163,13 +163,10 @@ public class RootLayoutController {                         //Controller für GU
     public void Buttonclk() {                   //mit server verbindung aufnehmen
 
         try {
-            CSocket = new Socket(tf_ip.getText(), 4343);
+            CSocket = new Socket(tf_ip.getText(), 4242);
+
             serverbt.setText("Verbunden mit: " + CSocket.getInetAddress().toString());
             serverbt.setDisable(true);
-
-            //ObjectInputStream in = new ObjectInputStream(CSocket.getInputStream());
-
-            // in.readObject();
 
             s.setText("Verbunden");
             s.setDisable(true);
@@ -407,6 +404,7 @@ public class RootLayoutController {                         //Controller für GU
 
                 try {
                     out.writeObject(send);
+                    out.flush();
                 } catch (IOException e) {
 
                     System.out.println("Fehler aufgetreten!!!");
@@ -416,7 +414,7 @@ public class RootLayoutController {                         //Controller für GU
 
 
                 bt.setDisable(true);
-                bt.setText("X");
+                bt.setStyle("-fx-background-color: #0101DF;");
                 setpane(true);
             }
         });
@@ -432,6 +430,7 @@ public class RootLayoutController {                         //Controller für GU
                 send.setMessage("reset");
                 try {
                     out.writeObject(send);
+                    out.flush();
                 } catch (IOException e) {
 
                     System.out.println("Fehler aufgetreten!!!");

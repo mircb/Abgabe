@@ -24,8 +24,6 @@ public class writer extends Thread{
         try {
             out = new ObjectOutputStream(connection.getOutputStream());
 
-            //out.println("hello");
-
             Nachricht send = new Nachricht();
 
             while(true){
@@ -33,7 +31,9 @@ public class writer extends Thread{
                 if(!last.equals(ser.getButtons())) {
                     last = ser.getButtons();
                     send.setMessage(last);
+
                     out.writeObject(send);
+                    out.flush();
                 }
             }
 
