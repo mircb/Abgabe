@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RootLayoutController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c6c6c6" height="94.0" layoutX="26.0" layoutY="21.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+      <Button fx:id="s" layoutX="29.0" layoutY="178.0" mnemonicParsing="false" onAction="#Buttonclk" prefHeight="25.0" prefWidth="186.0" text="Verbinden">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <TextField fx:id="tf_ip" layoutX="29.0" layoutY="144.0" prefHeight="29.0" prefWidth="186.0">
+         <font>
+            <Font size="13.0" />
+         </font></TextField>
+      <Label layoutX="29.0" layoutY="128.0" text="mit IP verbinden:">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Button fx:id="b11" layoutX="235.0" layoutY="46.0" mnemonicParsing="false" onAction="#Bt" prefHeight="19.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font></Button>
+      <Button fx:id="b12" layoutX="300.0" layoutY="46.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font></Button>
+      <Button fx:id="b13" layoutX="360.0" layoutY="46.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font></Button>
+      <Button fx:id="b15" layoutX="491.0" layoutY="46.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font></Button>
+      <Button fx:id="b16" layoutX="556.0" layoutY="46.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font></Button>
+      <Button fx:id="b14" layoutX="426.0" layoutY="46.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font></Button>
+      <Button fx:id="b17" layoutX="621.0" layoutY="46.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font></Button>
+      <Button fx:id="b21" layoutX="235.0" layoutY="113.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font></Button>
+      <Button fx:id="b22" layoutX="300.0" layoutY="113.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font></Button>
+      <Button fx:id="serverbt" layoutX="29.0" layoutY="219.0" mnemonicParsing="false" onAction="#Buttonclk2" prefHeight="58.0" prefWidth="186.0" text="Starte Server und verbinde">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Button fx:id="resetbt" layoutX="45.0" layoutY="358.0" mnemonicParsing="false" onAction="#reset" prefHeight="41.0" prefWidth="142.0" text="Reset">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <Label fx:id="label" layoutX="316.0" layoutY="21.0" text="Du bist X, der Gegner ist 0 " textOverrun="CLIP">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label ellipsisString="" layoutX="29.0" layoutY="19.0" prefHeight="84.0" prefWidth="193.0" text="Das ist ein Einfaches Tic-Tac-Toe Spiel. Einer der Spieler mus einen Server starten und der andere sich mit diesen verbinden. Viel Spaß!" wrapText="true">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
+      <Circle fx:id="cl_weristdranfalse" fill="#e5320e" layoutX="37.0" layoutY="305.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" visible="false" />
+      <Label fx:id="lb_weristdran" layoutX="47.0" layoutY="296.0" prefHeight="19.0" prefWidth="169.0" text="Fangen wir an">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Circle fx:id="cl_weristdrantrue" fill="#10e321" layoutX="37.0" layoutY="305.0" radius="8.0" stroke="BLACK" strokeType="INSIDE" />
+      <Button fx:id="b23" layoutX="365.0" layoutY="113.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b24" layoutX="426.0" layoutY="113.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b25" layoutX="485.0" layoutY="113.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b26" layoutX="550.0" layoutY="113.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b27" layoutX="615.0" layoutY="113.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b31" layoutX="236.0" layoutY="185.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b32" layoutX="301.0" layoutY="185.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b33" layoutX="366.0" layoutY="185.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b34" layoutX="427.0" layoutY="185.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b35" layoutX="486.0" layoutY="185.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b36" layoutX="551.0" layoutY="185.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b37" layoutX="616.0" layoutY="185.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b41" layoutX="236.0" layoutY="254.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b42" layoutX="301.0" layoutY="254.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b43" layoutX="366.0" layoutY="254.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b44" layoutX="427.0" layoutY="254.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b45" layoutX="486.0" layoutY="254.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b46" layoutX="551.0" layoutY="254.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b47" layoutX="616.0" layoutY="254.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b51" layoutX="237.0" layoutY="323.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b52" layoutX="302.0" layoutY="323.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b53" layoutX="367.0" layoutY="323.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b54" layoutX="428.0" layoutY="323.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b55" layoutX="487.0" layoutY="323.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b56" layoutX="552.0" layoutY="323.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b57" layoutX="617.0" layoutY="323.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b61" layoutX="238.0" layoutY="392.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b62" layoutX="303.0" layoutY="392.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b63" layoutX="368.0" layoutY="392.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b64" layoutX="429.0" layoutY="392.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b65" layoutX="488.0" layoutY="392.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b66" layoutX="553.0" layoutY="392.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+      <Button fx:id="b67" layoutX="618.0" layoutY="392.0" mnemonicParsing="false" onAction="#Bt" prefHeight="69.0" prefWidth="65.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>
