@@ -25,7 +25,7 @@ public class ServerThread extends Thread {
             ObjectInputStream in = new ObjectInputStream(connection.getInputStream());
 
             Message M = (Message) in.readObject();
-            ObjectOutputStream out = new ObjectOutputStream(connection.getOutputStream());
+            ObjectOutputStream out;
             if (M.getMessage().equals("0")) {
 
                 double Ant = Math.random()*99*(Math.random())*100;

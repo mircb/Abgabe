@@ -22,7 +22,7 @@ public class Server {
                     while (p) {
                         socket = listener.accept();                                                  //Auf Verbindungen wird gewartet
                         System.out.println("verbunden mit:" + socket.getLocalSocketAddress());
-                        executor.execute(new ServerThread(socket, this));
+                        executor.execute(new ServerThread(socket, this));                       //an Excecutor wird übergeben
 
                     }
                 } catch (Exception e) {
@@ -38,13 +38,13 @@ public class Server {
         }
 
 
-    public void Shutdown(){
+    public void Shutdown(){                         //Funktion um Server sicher Abzuschalten
         p=false;
         try {
             socket.close();
             executor.shutdown();
-            executor.shutdownNow();
-
+            System.out.println("Server beendet");
+            System.exit(0);
         }catch (Exception e) {
             System.out.println("Server beendet mit Fehler");
         }

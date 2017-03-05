@@ -35,7 +35,7 @@ public class Client {
         while (!exit) {
 
 
-            System.out.println("Radom Wert(0) oder getTime(1)?(oder exit oder shutdown)");                 //Pfad eingeben oder exit
+            System.out.println("Radom Wert(0) oder getTime(1)?(oder exit oder shutdown)");      //Auswahl eingeben
             enter = reader.readLine();
             if (enter.equals("exit")) {
                 exit = true;
@@ -43,7 +43,7 @@ public class Client {
             }if (enter.equals("shutdown")) {
                 exit = true;
                 M.setMessage("shutdown");
-                Socket s = new Socket(serverAddress, 4242);                                         //Verbindung wird aufgebaut und Pfad gesendet
+                Socket s = new Socket(serverAddress, 4242);                                 //Verbindung wird aufgebaut und Auswahl gesendet
                 Message a = new Message();
                 a.setMessage(enter);
                 ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
@@ -54,7 +54,7 @@ public class Client {
 
                 try {
                     M.setMessage(enter);
-                    Socket s = new Socket(serverAddress, 4242);                                         //Verbindung wird aufgebaut und Pfad gesendet
+                    Socket s = new Socket(serverAddress, 4242);                                         //Verbindung wird aufgebaut und Auswahl gesendet
                     Message a = new Message();
                     a.setMessage(enter);
 
@@ -68,7 +68,7 @@ public class Client {
 
 
                     if(a.getInt1()==1){
-                        DateFormat formatter = new SimpleDateFormat("yyyy/MM/dd/hh:mm:ss");
+                        DateFormat formatter = new SimpleDateFormat("yyyy/MM/dd/hh:mm:ss");     //Ausgabe des Ergebniss
 
                         Calendar cal = Calendar.getInstance();
                         cal.setTimeInMillis(Long.parseLong(a.getMessage()));
