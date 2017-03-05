@@ -9,9 +9,7 @@ import java.util.Arrays;
 public class Client {
 
     public static void main(String args[]) throws Exception {
-
-
-        //Daten des Servers einlesen
+                                                                                            //Daten des Servers einlesen
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("IP des Servers eingeben, auf dem der UDP-Chat auf Port 4242 und 4545 laüft\n" +                  //IP des Servers wird eingelesen(Default127.0.0.1) oder exit befehl wird ausgeführt
                 "(Default 127.0.0.1)Tippe 'exit' to exit");
@@ -45,8 +43,11 @@ public class Client {
                     while (true) {
 
                         listenerSocket.receive(receivePacket);
+
+
                         String answer = new String(receivePacket.getData());
-                            System.out.println("Anderer Benutzer(oder eingene Nachricht):" + answer);
+
+                        System.out.println("Anderer Benutzer(oder eigene Nachricht):" + answer);
 
                     }
                 } catch (Exception e) {
@@ -67,6 +68,7 @@ public class Client {
                          //Nachricht einlesen und dem Server senden.
 
             enter = reader.readLine();
+
             sendData = enter.getBytes();
 
             DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 4242);
