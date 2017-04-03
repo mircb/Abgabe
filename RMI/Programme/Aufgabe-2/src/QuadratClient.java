@@ -1,3 +1,5 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
@@ -6,17 +8,24 @@ import java.rmi.registry.Registry;
  */
 public class QuadratClient {
 
-    public static void main(String[] args) {
-        try {                                           //Client
+    public static void main(String[] args) {        //Client
+        try {
 
-            String host = "127.0.0.1";
+            String host;
 
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Adresse eingeben andie verbunden werden soll:");
 
-            // Get remote object reference
-            Registry registry = LocateRegistry.getRegistry(host,4242);
+            host= reader.readLine();
+
+            Registry registry = LocateRegistry.getRegistry(host,1099);
             Quadrat h = (Quadrat) registry.lookup("test");
-            // Remote method invocation
-            double res = h.quadrat(4);
+
+
+            System.out.println("Zahl eingeben die Berechnet werden soll:");
+            String enter= reader.readLine();
+
+            double res = h.quadrat(Integer.parseInt(enter));
 
             System.out.println("Ergebniss: "+res);
         } catch (Exception e) {

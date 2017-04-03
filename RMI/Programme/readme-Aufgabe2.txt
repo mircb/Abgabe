@@ -1,7 +1,7 @@
 
 Dokumentation:
-	- Programm funktioniert nicht
-	- Daher b) bei Programmieren und c) bei Theorie nicht machbar
+	- Programm funktioniert endlicht
+	
 
 
 

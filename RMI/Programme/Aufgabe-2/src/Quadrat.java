@@ -7,6 +7,6 @@ import java.rmi.RemoteException;
 
 public interface  Quadrat  extends Remote {             //Interface des Remote Objekts
 
-        public double quadrat(double i) throws RemoteException;
+         double quadrat(double i) throws RemoteException;
 
 }

@@ -15,28 +15,16 @@ public class Server {
         try {
 
 
-            System.setProperty("java.rmi.server.hostname", "127.0.0.2");
+            LocateRegistry.createRegistry(Registry.REGISTRY_PORT);
+
+            Registry registry = LocateRegistry.getRegistry(Registry.REGISTRY_PORT);
+
             QuadratImpl h = new QuadratImpl();
+           UnicastRemoteObject.unexportObject(h,true);
 
-           // System.setSecurityManager(new SecurityManager());                             Versuch mit Rechten
-            //SecurityManager security = System.getSecurityManager();
+            Quadrat h_stub = (Quadrat) UnicastRemoteObject.exportObject(h,4242);
 
-            //security.checkPermission(new SocketPermission("localhost:4242","listen,resolve"));
-          // security.checkPermission(new FilePermission("Server.java", "read,write"));
-
-            LocateRegistry.getRegistry(Registry.REGISTRY_PORT);
-            Runtime.getRuntime().exec("rmiregistry");
-
-            Registry registry = LocateRegistry.getRegistry();
-
-
-            UnicastRemoteObject.unexportObject(h, true);
-
-            Quadrat h_stub = (Quadrat) UnicastRemoteObject.exportObject(h, 4242);
-
-
-
-            registry.bind("test", h_stub);                  //Hier immer Fehler
+            registry.bind("test", h_stub);
 
             System.out.println("Server ready");
 
