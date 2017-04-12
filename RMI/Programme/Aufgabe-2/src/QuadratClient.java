@@ -14,7 +14,7 @@ public class QuadratClient {
             String host;
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("Adresse eingeben andie verbunden werden soll:");
+            System.out.println("Adresse eingeben mitder  verbunden werden soll:");
 
             host= reader.readLine();
 
@@ -25,7 +25,7 @@ public class QuadratClient {
             System.out.println("Zahl eingeben die Berechnet werden soll:");
             String enter= reader.readLine();
 
-            double res = h.quadrat(Integer.parseInt(enter));
+            long res = h.quadrat(Integer.parseInt(enter));
 
             System.out.println("Ergebniss: "+res);
         } catch (Exception e) {

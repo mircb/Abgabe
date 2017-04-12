@@ -13,7 +13,7 @@ public class QuadratImpl extends UnicastRemoteObject implements Quadrat {
 
     }
 
-    public double quadrat(double i) {
+    public long quadrat(long i) {
         return i * i;
     }           //Implementation der Funktion
 

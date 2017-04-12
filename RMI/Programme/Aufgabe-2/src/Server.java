@@ -1,7 +1,3 @@
-import java.io.FilePermission;
-import java.net.SocketPermission;
-import java.rmi.Naming;
-import java.rmi.RMISecurityManager;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
@@ -20,7 +16,7 @@ public class Server {
             Registry registry = LocateRegistry.getRegistry(Registry.REGISTRY_PORT);
 
             QuadratImpl h = new QuadratImpl();
-           UnicastRemoteObject.unexportObject(h,true);
+            UnicastRemoteObject.unexportObject(h,true);
 
             Quadrat h_stub = (Quadrat) UnicastRemoteObject.exportObject(h,4242);
 
