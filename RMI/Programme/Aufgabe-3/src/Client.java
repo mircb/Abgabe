@@ -16,7 +16,7 @@ public class Client implements Serializable {
             String host;
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("Adresse eingeben mitder  verbunden werden soll:");
+            System.out.println("Adresse eingeben mitder  verbunden werden soll:");          //Einlesen und aufrufen der Funktion
 
             host= reader.readLine();
 
@@ -30,9 +30,6 @@ public class Client implements Serializable {
 
             a.Antwort(enter,this);
 
-
-            //String erg = a.Antwort(enter);
-            //System.out.println("Antword: "+erg);
         } catch (Exception e) {
             e.printStackTrace();
         }

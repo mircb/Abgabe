@@ -15,7 +15,7 @@ public class AntImpl extends UnicastRemoteObject implements Ant {
 
     }
 
-   public void  Antwort(String i, Client c) {
+   public void  Antwort(String i, Client c) {           //Implementation der Funktion
         try {
             Thread.sleep(10000);
 

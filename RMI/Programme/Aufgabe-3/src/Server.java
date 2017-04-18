@@ -11,7 +11,7 @@ public class Server {
         try {
 
 
-            LocateRegistry.createRegistry(Registry.REGISTRY_PORT);
+            LocateRegistry.createRegistry(Registry.REGISTRY_PORT);          //Erstellen des Remote-Objektes
 
             Registry registry = LocateRegistry.getRegistry(Registry.REGISTRY_PORT);
 
